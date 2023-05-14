@@ -3,22 +3,14 @@ import { Flex } from "@/styles/Global";
 import { Button } from "@/styles/Buttons";
 
 import dots from "@/public/static/img/background/dots.svg";
-import backgroundImg from "@/public/static/img/background/header-bg.svg";
 
 export const Header = styled("header", {
-	backgroundColor: "$grey1",
 	padding: "12rem 0 8rem 0",
-	backgroundImage: `url(${backgroundImg})`,
-	backgroundRepeat: "no-repeat",
-	backgroundPosition: "right",
-	backgroundAttachment: "fixed",
+	backgroundColor: "$grey1",
 	borderBottom: "2px solid $grey5",
-	"@tablet": {
-		backgroundPosition: "right -10% center"
-	},
+
 	"@mobile": {
-		padding: "9rem 0 6rem 0",
-		backgroundImage: `none`
+		padding: "9rem 0 6rem 0"
 	},
 	"@mobileLittle": {
 		padding: "9rem 0 0 0"
@@ -27,7 +19,6 @@ export const Header = styled("header", {
 
 export const HeaderContent = styled("div", {
 	maxWidth: "100%",
-	width: "36rem",
 	display: "flex",
 	flexDirection: "column",
 	gap: "$2",
@@ -75,8 +66,10 @@ export const UserImage = styled("img", {
 });
 
 export const StackSection = styled("div", {
-	backgroundColor: "$grey4",
-	padding: "4rem 0 2rem 0"
+	padding: "$section 0",
+	"@tablet": {
+		padding: "$sectionMobile 0"
+	}
 });
 
 export const StackCards = styled("div", {

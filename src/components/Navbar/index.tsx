@@ -5,6 +5,7 @@ import { userData, links } from "@/utils/index";
 
 import {
 	LogoTipo,
+	LogoImage,
 	NavbarLinks,
 	LogoTipoText,
 	NavbarMobileArea,
@@ -15,6 +16,7 @@ import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { Button } from "@/styles/Buttons";
 import { Container, Flex } from "@/styles/Global";
+import logo from "../../public/static/img/logo/logo.png";
 
 export interface MenuButtonOpen {
 	open: Boolean;
@@ -37,6 +39,7 @@ export const NavBar = (): JSX.Element => {
 			<Container>
 				<NavbarMobileArea>
 					<LogoTipo>
+						<LogoImage src={logo} />
 						<LogoTipoText>{userData.nameUser}</LogoTipoText>
 					</LogoTipo>
 					{isWide && (
@@ -56,7 +59,7 @@ export const NavBar = (): JSX.Element => {
 };
 
 export const NavLinks = (): JSX.Element => {
-	const [location, setLocation] = useState("home");
+	const [location, setLocation] = useState(window.location.hash);
 
 	return (
 		<NavbarLinks>
@@ -67,8 +70,8 @@ export const NavLinks = (): JSX.Element => {
 					as="a"
 					href={`#${path}`}
 					key={path}
-					onClick={() => setLocation(path)}
-					className={location === path ? "active" : ""}
+					onClick={() => setLocation(`#${path}`)}
+					className={location === `#${path}` ? "active" : ""}
 				>
 					{name}
 				</Button>

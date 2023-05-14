@@ -24,7 +24,8 @@ import {
 	ProjectsArea,
 	ProjectsAreaSocialMediaMessage,
 	ProjectAreaWrapperColumns,
-	ProjectsAreaContent
+	ProjectsAreaContent,
+	StackSection
 } from "./style";
 
 export const Home = (): JSX.Element => {
@@ -88,11 +89,17 @@ export const Home = (): JSX.Element => {
 								<FaGithub />
 							</Button>
 						</HeaderButtonsArea>
-						<StackCards>
-							{stackData.map((stack, index) => (
-								<Stack key={index} title={stack.title} icon={stack.img} />
-							))}
-						</StackCards>
+						<StackSection id="tecnologies">
+							<Text as="h2" type="heading4" color="grey4">
+								Principais Tecnologias
+							</Text>
+
+							<StackCards>
+								{stackData.map((stack, index) => (
+									<Stack key={index} title={stack.title} icon={stack.img} />
+								))}
+							</StackCards>
+						</StackSection>
 					</HeaderContent>
 				</Container>
 			</Header>

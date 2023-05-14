@@ -31,7 +31,9 @@ export const Project = (): JSX.Element => {
 			);
 
 			const json: ReposType[] = await data.json();
-			const projects = json.filter(({ homepage }) => homepage);
+			const projects = json.filter(
+				({ homepage, name }) => homepage && name !== "demo-portfolio"
+			);
 
 			setRepositories(projects);
 
@@ -44,7 +46,7 @@ export const Project = (): JSX.Element => {
 	return (
 		<>
 			{repositories &&
-				repositories?.map?.(repository => (
+				repositories.map?.(repository => (
 					<ProjectWrapper key={repository.id}>
 						<ProjectTitle
 							as="h2"

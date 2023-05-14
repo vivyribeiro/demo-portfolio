@@ -1,6 +1,6 @@
 export const links = [
 	{ name: "Início", path: "home" },
+	{ name: "Tecnologias", path: "tecnologies" },
 	{ name: "Projetos", path: "projects" },
-	{ name: "Contato", path: "contact" },
-	{ name: "Redes Sociais", path: "social-media" }
+	{ name: "Contato", path: "contact" }
 ];
